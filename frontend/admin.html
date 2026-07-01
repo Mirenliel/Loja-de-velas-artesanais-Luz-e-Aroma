@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Luz & Aroma</title>
+  <script>
+    if (sessionStorage.getItem('adminAutenticado') !== 'true') {
+      window.location.replace('login.html');
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Luz & Aroma</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" data-nav-links>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catalogo</a>
+        <a href="reserva.html">Reserva</a>
+        <a href="admin.html" class="active">Admin</a>
+        <button class="nav-button" type="button" id="logout-button">Sair</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero admin-hero">
+      <div class="container page-hero-content reveal">
+        <span class="eyebrow">Administracao</span>
+        <h1>Painel da loja</h1>
+        <p>Visualize produtos cadastrados e acompanhe as reservas recebidas.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container admin-grid">
+        <article class="admin-panel reveal">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow">Produtos</span>
+              <h2>Catalogo cadastrado</h2>
+            </div>
+            <span id="produtos-total" class="badge">0</span>
+          </div>
+          <div id="admin-produtos-status" class="status-message">Carregando produtos...</div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Fragrancia</th>
+                  <th>Preco</th>
+                </tr>
+              </thead>
+              <tbody id="admin-produtos-tabela"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="admin-panel reveal">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow">Reservas</span>
+              <h2>Solicitacoes recebidas</h2>
+            </div>
+            <span id="reservas-total" class="badge">0</span>
+          </div>
+          <div id="admin-reservas-status" class="status-message">Carregando reservas...</div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>Telefone</th>
+                  <th>Produto</th>
+                  <th>Qtd.</th>
+                  <th>Status</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody id="admin-reservas-tabela"></tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>Luz & Aroma</span>
+      <span>Area administrativa simples</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

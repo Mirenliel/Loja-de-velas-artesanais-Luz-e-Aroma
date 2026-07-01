@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogo | Luz & Aroma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Luz & Aroma</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" data-nav-links>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html" class="active">Catalogo</a>
+        <a href="reserva.html">Reserva</a>
+        <a href="login.html">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content reveal">
+        <span class="eyebrow">Catalogo</span>
+        <h1>Velas artesanais disponiveis</h1>
+        <p>Consulte fragrancia, descricao e preco antes de fazer sua reserva.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="catalogo-status" class="status-message">Carregando produtos...</div>
+        <div id="produtos-lista" class="products-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>Luz & Aroma</span>
+      <a href="reserva.html">Fazer reserva</a>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

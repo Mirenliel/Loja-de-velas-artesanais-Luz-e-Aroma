@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Admin | Luz & Aroma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Luz & Aroma</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" data-nav-links>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catalogo</a>
+        <a href="reserva.html">Reserva</a>
+        <a href="login.html" class="active">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content reveal">
+        <span class="eyebrow">Area administrativa</span>
+        <h1>Acesso do administrador</h1>
+        <p>Entre para visualizar produtos cadastrados e reservas recebidas.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container auth-layout">
+        <form id="login-form" class="form-card reveal">
+          <div class="form-row">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" autocomplete="username" required>
+          </div>
+
+          <div class="form-row">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" autocomplete="current-password" required>
+          </div>
+
+          <button class="btn btn-primary btn-full" type="submit">Entrar</button>
+          <div id="login-status" class="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>Luz & Aroma</span>
+      <span>Acesso administrativo simples</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

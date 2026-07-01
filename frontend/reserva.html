@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva | Luz & Aroma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Luz & Aroma</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" data-nav-links>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catalogo</a>
+        <a href="reserva.html" class="active">Reserva</a>
+        <a href="login.html">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content reveal">
+        <span class="eyebrow">Reserva</span>
+        <h1>Reserve sua vela para retirada</h1>
+        <p>Preencha os dados abaixo para registrar sua reserva na loja.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container form-layout">
+        <form id="reserva-form" class="form-card reveal">
+          <div class="form-row">
+            <label for="cliente_nome">Nome completo</label>
+            <input type="text" id="cliente_nome" name="cliente_nome" autocomplete="name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="cliente_telefone">Telefone</label>
+            <input type="tel" id="cliente_telefone" name="cliente_telefone" autocomplete="tel" required>
+          </div>
+
+          <div class="form-row">
+            <label for="produto_id">Produto</label>
+            <select id="produto_id" name="produto_id" required>
+              <option value="">Carregando produtos...</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" value="1" required>
+          </div>
+
+          <div class="form-row">
+            <label for="observacao">Observacao</label>
+            <textarea id="observacao" name="observacao" rows="4" placeholder="Preferencias ou detalhes para a retirada"></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-full" type="submit">Enviar reserva</button>
+          <div id="reserva-status" class="form-status" aria-live="polite"></div>
+        </form>
+
+        <aside class="info-panel reveal">
+          <span class="eyebrow">Como funciona</span>
+          <h2>Reserva simples e sem pagamento online.</h2>
+          <p>
+            A loja recebe sua solicitacao, confere os dados e prepara o produto para retirada.
+          </p>
+          <div class="mini-list">
+            <span>Escolha o produto</span>
+            <span>Informe a quantidade</span>
+            <span>Aguarde a confirmacao da equipe</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>Luz & Aroma</span>
+      <a href="catalogo.html">Voltar ao catalogo</a>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/reserva.js"></script>
+</body>
+</html>

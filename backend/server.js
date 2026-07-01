@@ -22,11 +22,28 @@ const allowedOrigins = [
   frontendUrl
 ].filter(Boolean);
 
+function isAllowedOrigin(origin) {
+  if (!origin) {
+    return true;
+  }
+
+  const normalizedOrigin = origin.replace(/\/$/, '');
+
+  if (allowedOrigins.includes(normalizedOrigin)) {
+    return true;
+  }
+
+  try {
+    const url = new URL(normalizedOrigin);
+    return url.protocol === 'https:' && url.hostname.endsWith('.vercel.app');
+  } catch (error) {
+    return false;
+  }
+}
+
 app.use(cors({
   origin(origin, callback) {
-    const normalizedOrigin = origin ? origin.replace(/\/$/, '') : origin;
-
-    if (!normalizedOrigin || allowedOrigins.includes(normalizedOrigin)) {
+    if (isAllowedOrigin(origin)) {
       return callback(null, true);
     }
 

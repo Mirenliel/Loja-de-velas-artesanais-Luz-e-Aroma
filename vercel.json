@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://luz-e-aroma-backend.onrender.com/api/:path*"
+      "destination": "https://loja-de-velas-artesanais-luz-e-aroma.onrender.com/api/:path*"
     },
     {
       "source": "/",
